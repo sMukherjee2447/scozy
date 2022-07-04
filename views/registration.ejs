@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Register Yourself</title>
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Font-->
+        <link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+        <link rel="stylesheet" type="text/css"
+            href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+        <!-- Main Style Css -->
+        <link rel="stylesheet" href="/register.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    </head>
+
+    <body class="form-v10">
+        <div class="page-content">
+            <div class="form-v10-content">
+                <h5 class="text-danger" style="font-style: italic; font-size: small; margin-top: 30px;">
+
+                    <% if(typeof errors !=='undefined' ) { %>
+                    <ul style="margin-left: 25px;">
+                        <% errors.forEach(error=> { %>
+                        <li class="text-danger">
+                            <%= error.message %>
+                            <% }) %>
+                        </li>
+                    </ul>
+                    <% } %>
+
+                </h5>
+                <form class="form-detail" action="/scozy/users/register" method="POST" id="myform"
+                    enctype="multipart/form-data">
+                    <div class="form-left">
+                        <h2>Register yourself</h2>
+                        <div class="form-group">
+                            <div class="form-row form-row-1">
+                                <input type="text" name="fname" id="first_name" class="input-text"
+                                    placeholder="First Name" required>
+                            </div>
+                            <div class="form-row form-row-2">
+                                <input type="text" name="lname" id="last_name" class="input-text"
+                                    placeholder="Last Name" required>
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+                            <input type="email" name="email" id="your_email" class="input-text" required
+                                placeholder="Your Email">
+                        </div>
+
+                        <div class="form-row">
+                            <input type="text" name="username" class="company" id="company"
+                                placeholder="Select an unique username" required>
+                        </div>
+
+                        <div class="form-row form-row-4">
+                            <select name="gender">
+                                <option value="gender">Gender</option>
+                                <option value="male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="not">Prefer not to say</option>
+                            </select>
+                            <span class="select-btn">
+                                <i class="zmdi zmdi-chevron-down"></i>
+                            </span>
+                        </div>
+
+                        <div class="form-row">
+                            <input type="password" name="pass" class="company" id="company" placeholder="Password"
+                                required>
+                        </div>
+                        <div class="form-row">
+                            <input type="password" name="pass2" class="company" id="company"
+                                placeholder="Confirm Password" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="image">Upload a profile picture</label>
+                            <input type="file" name="image" id="image" placeholder="Upload your image">
+                        </div>
+
+                        <div class="form-row">
+                            <button class="btn btn-success" type="submit" value="Register">submit</button>
+                        </div>
+                        <div class="form-row" style="margin-left: 200px; color: rgb(7, 7, 7);">
+                            <small>ALready a member? <span class="sn"><a href="/scozy/users/sign-in"
+                                        style="text-decoration: none; color:rgb(243, 11, 11)">Sign in
+                                        here</a></span></small>
+                        </div>
+
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script>
+            $("#myform").submit(function (event) {
+                alert("You have been Registered successfully, Please Login");
+            })
+
+        </script> -->
+    </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
