@@ -90,10 +90,7 @@
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <a href="/logout">Logout</a>
                 </div>
             </div>
         </nav>
@@ -143,7 +140,8 @@
                             </b>
                             <br>
                             <br>
-                            <a href="/scozy/products" class="btn btn-primary">Details</a>
+                            <a href="/scozy/products/<%= data.productId%>/<%= data._id%>"
+                                class="btn btn-primary">Details</a>
                         </div>
                     </div>
                 </div>

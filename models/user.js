@@ -42,6 +42,10 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true
+    },
+    type: {
+        type: String,
+        default: 'Normal'
     }
 }, {
     collection: 'users'
