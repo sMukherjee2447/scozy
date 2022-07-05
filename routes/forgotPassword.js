@@ -9,13 +9,13 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
     let {
-        email,
+        uname,
         newPass,
         newPass2
     } = req.body
 
     console.log("This is forgot password details -->", {
-        email,
+        uname,
         newPass,
         newPass2
     })
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
     let errors = []
 
     const findUser = await User.findOne({
-        email
+        "username": uname
     })
 
     console.log("This is the user-->", findUser._id);
@@ -35,21 +35,18 @@ router.post('/', async (req, res) => {
         var newHashedPass2 = bcrypt.hashSync(newPass2, 10)
         console.log(newHashedPass2)
 
-        if (newHashedPass === findUser.hashed_pass1 || newHashedPass2 === findUser.hashed_pass2) {
-            errors.push({
-                message: "Passwords cannot be same as Old Password"
-            })
-        } else {
-            const update = await User.findOneAndUpdate({
-                "_id": findUser._id
-            }, {
-                "$set": {
-                    "hashed_pass1": newHashedPass,
-                    "hashed_pass2": newHashedPass2
-                }
-            })
-        }
+
+        var update = await User.findOneAndUpdate({
+            "_id": findUser._id
+        }, {
+            "$set": {
+                "hashed_pass1": newHashedPass,
+                "hashed_pass2": newHashedPass2
+            }
+        })
+
         console.log("Password updated Successfully!!!!", update);
+        res.redirect('/scozy/users/sign-in')
     } else {
         errors.push({
             message: "Email not found"
