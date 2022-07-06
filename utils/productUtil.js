@@ -55,6 +55,24 @@ const products = [{
         productId: "E-M001",
         image: "2022-07-06T08-00-14.458Z713JDux7+LL._SL1500_.jpg",
         box: "Mouse",
+    },
+    {
+        name: "Samsung Galaxy M32 ",
+        description: "Samsung Galaxy M32 (Light Blue, 6GB RAM, 128GB | FHD+ sAMOLED 90Hz Display | 6000mAh Battery | 64MP Quad Camera",
+        price: "₹16,999.00",
+        specs: "Segment Best 16.21 centimeters (6.4-inch) Super AMOLED - Infinity U-cut display, FHD+ resolution with 90Hz Refresh rate, 800 Nits High Brightness Mode, protected by Gorilla Glass 5\r\nVersatile 64MP+8MP+2MP+2MP Quad camera setup-64MP (F 1.8) main camera + 8MP (F2.2) Ultra wide camera+ 2MP (F2.4) depth camera + 2MP (2.4) Macro Camera| 20MP (F2.2) front camera\r\nMonster 6000 mAh Battery| Memory, Storage & SIM: 6GB RAM | 128GB internal memory expandable up to 1TB| SIM 1 + SIM 2 + MicroSD\r\nAndroid v11.0, One UI 3.1 operating system with MediaTek | Helio G80 Octa Core Processor 2GHz,1.8GHz",
+        productId: "E-M002",
+        image: "2022-07-06T10-49-50.994Z71F4jU7MRUS._SL1500_.jpg",
+        box: "Mobile Phone, Charger, Headphone",
+    },
+    {
+        name: "Samsung Galaxy M53 5G",
+        description: "Samsung Galaxy M53 5G (Deep Ocean Blue, 8GB, 128GB Storage) | 108MP Camera | sAmoled+ 120Hz | 32MP Front Camera | 6nm Processor | 16GB RAM with RAM Plus | Travel Adapter to be Purchased Separately",
+        price: "₹28,499.00",
+        specs: "Segment Best 108MP Quad Camera Setup, with exciting features like Single Take, Object Eraser, and Photo Remaster\r\n6.7-inch Super AMOLED Plus Display, FHD+ resolution, 1080x2400 pixels with 120Hz Refresh Rate\r\nMTK D900 Octa Core 2.4GHz 6nm Processor with 4x4 Mimo Band support for a HyperFast 5G experience\r\nMassive 5000 mAh Battery | Memory, Storage & SIM: 8GB RAM | RAM Plus upto 8GB |128GB internal memory expandable up to 1TB\r\nLatest Android v12.0, One UI 4 operating system",
+        productId: "E-M003",
+        image: "2022-07-06T10-51-26.379Z81yL2dXKTHL._SL1500_.jpg",
+        box: "Mobile",
     }
 ]
 
