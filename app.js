@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public/images')));
 app.use(express.static(path.join(__dirname, 'public/video')));
 app.use(express.static(path.join(__dirname, 'public/css')));
 app.use(express.static(path.join(__dirname, 'public/uploads')));
+app.use(express.static(path.join(__dirname, 'public/productUploads')));
 app.set('view engine', 'ejs')
 
 

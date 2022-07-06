@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
 const res = require('express/lib/response')
 
-const userSchema = new mongoose.Schema({
+const adminSchema = new mongoose.Schema({
     fname: {
         type: String,
         // require: true
@@ -45,10 +45,9 @@ const userSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        default: 'Normal'
     }
 }, {
-    collection: 'users'
+    collection: 'admin'
 })
 
 userSchema.statics.generateAuthToken = async function () {
@@ -64,6 +63,6 @@ userSchema.statics.generateAuthToken = async function () {
     }
 }
 
-const model = mongoose.model('userSchema', userSchema)
+const model = mongoose.model('adminSchema', userSchema)
 
 module.exports = model

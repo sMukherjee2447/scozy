@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
             const admin_token = admin.register_token
 
             res.cookie("JWT", admin_token, {
-                expires: new Date(Date.now() + 30000),
+                expires: new Date(Date.now() + 30000000),
                 httpOnly: true
             })
 

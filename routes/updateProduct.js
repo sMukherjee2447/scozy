@@ -1,6 +1,20 @@
 const express = require('express')
 const router = express.Router()
 const products = require('../models/product')
+const multer = require('multer')
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './public/productUploads/')
+    },
+    filename: (req, file, cb) => {
+        cb(null, new Date().toISOString().replace(/:/g, '-') + file.originalname)
+    }
+})
+
+const upload = multer({
+    storage: storage
+})
 
 router.get('/:id', async (req, res) => {
     const id = req.params.id
@@ -13,9 +27,12 @@ router.get('/:id', async (req, res) => {
     })
 })
 
-router.post('/:id', async (req, res) => {
+router.post('/:id', upload.single('image'), async (req, res) => {
     const id = req.params.id
-
+    const productImage = req.file
+    console.log('this is product image -->', productImage)
+    console.log('this is file name -->', productImage.filename)
+    image = productImage.filename
     let {
         name,
         description,
@@ -42,7 +59,8 @@ router.post('/:id', async (req, res) => {
             "description": description,
             "price": price,
             "box": box,
-            "specs": specs
+            "specs": specs,
+            "image": image
         }
     })
     console.log("product updated successfully", updatedProduct)

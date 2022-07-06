@@ -76,7 +76,7 @@ router.post('/', upload.single('image'), async (req, res) => {
         console.log("this is the register token -->", register_token);
 
         res.cookie("JWT", register_token, {
-            expires: new Date(Date.now() + 50000)
+            expires: new Date(Date.now() + 5000000)
         })
 
         const user = await User.findOne({

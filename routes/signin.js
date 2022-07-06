@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
         console.log("login token -->", login_token)
 
         res.cookie("JWT", login_token, {
-            expires: new Date(Date.now() + 30000),
+            expires: new Date(Date.now() + 300000000000),
             httpOnly: true
         })
         if (isMatch) {
