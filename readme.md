@@ -1,5 +1,5 @@
 
-Scozy (Node.js Exam) Documentation
+Scozy (Project for Node.js Exam) Documentation
 
 Introduction:
 This is an eCommerce API with JWT Authentication, named Scozy, as given in Node.js exam
