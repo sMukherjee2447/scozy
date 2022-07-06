@@ -1,14 +1,19 @@
 require('dotenv').config();
 const conn = require('./db-connect')
-conn()
+// conn()
 const User = require('./models/user')
-const admin = require('./adminutil')
+const adminData = require('./utils/adminutil')
+const userData = require('./utils/userUtil')
+const productData = require('./utils/productUtil')
+const product = require('./models/product')
 
 
 
 const importData = async () => {
     try {
-        await User.insertMany(admin)
+        await User.insertMany(adminData)
+        await User.insertMany(userData)
+        await product.insertMany(productData)
 
         console.log('Data Inserted Successfully')
         process.exit()

@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const app = express()
 
-const conn = mongoose.connect('mongodb+srv://subham:subham@cluster0.ojwma.mongodb.net/scozy', {
+const conn = mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })

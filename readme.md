@@ -22,14 +22,15 @@ Installation :
  
  Step 1: configuring the .env file
 
-within the project directory, you will find a .env.example file, just rename it as .env. In the .env file you will find the MONGODB_URI and JWT_SECRET. You can change the MONGO_URI to your personal URI, the current URI belongs to MongoDb Atlas, so even if you don't change the URI it will work fine. 
+within the project directory, you will find a .env.example file, just rename it as .env. In the .env file you will find the MONGODB_URI and JWT_SECRET. You have to change the MONGO_URI to your personal URI. You can also change the JWT_SECRET 
 
  Step 2: Running the Project :
 
     ⦁	First npm install, in your terminal,  for installing all packages latest version.
-    ⦁	npm start,  to run the Project. (wait untill it shows "MongoDb connected successfully")
+    ⦁	npm start,  to run the Project.
+    ⦁   npm run data:import to import the data from Seed to your database
 
 
-Dummy id and password :
+id and password :
      ⦁ for admin login -  id : s@m , password: subham
      ⦁ for user login - id : subham, password: subham

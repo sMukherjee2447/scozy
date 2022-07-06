@@ -14,6 +14,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Document</title>
     </head>
 
@@ -107,7 +110,8 @@
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </span>
                                                 </a>
-                                                <a class="btn border-shadow delete" id="delete" data-id=>
+                                                <a class="btn border-shadow delete" id="delete"
+                                                    data-id=<%=allUsers._id%>>
                                                     <span class="text-gradient">
                                                         <i class="fa-solid fa-user-slash"></i>
                                                     </span>
@@ -203,7 +207,11 @@
                                     </a>
                                     <a class="btn border-shadow delete" id="delete" data-id=<%=allproducts._id%>>
                                         <span class="text-gradient">
-                                            <i class="fa-solid fa-user-slash"></i>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
+                                            </svg>
                                         </span>
                                     </a>
                                 </td>
@@ -240,7 +248,30 @@
 
                 if (confirm("Do you want to delete this record?")) {
                     $.ajax(request).done(function (response) {
-                        alert("Data Deleted Successfully!");
+                        alert("Product Deleted Successfully!");
+                        location.reload();
+                    })
+                }
+
+            })
+        }
+
+    </script>
+    <script>
+        if (window.location.pathname == "/scozy/admin/dashboard") {
+            $ondelete = $(".table tbody td a.delete");
+            $ondelete.click(function () {
+                var id = $(this).attr("data-id")
+                console.log(id)
+
+                var request = {
+                    "url": `http://localhost:3000/scozy/admin/dashboard/users/${id}`,
+                    "method": "DELETE"
+                }
+
+                if (confirm("Do you want to delete this record?")) {
+                    $.ajax(request).done(function (response) {
+                        alert("User Deleted Successfully!");
                         location.reload();
                     })
                 }

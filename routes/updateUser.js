@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const deleteUser = require('../controller/userDeleteController')
 
 router.get('/:id', async (req, res) => {
     const id = req.params.id
@@ -30,5 +31,7 @@ router.post('/:id', async (req, res) => {
     console.log("user updated successfully", updatedUser)
     res.redirect('/scozy/admin/dashboard')
 })
+
+router.delete('/:id', deleteUser.delete)
 
 module.exports = router

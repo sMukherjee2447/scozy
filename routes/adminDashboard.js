@@ -4,6 +4,7 @@ const product = require('../models/product')
 const User = require('../models/user')
 const multer = require('multer')
 const deleteController = require('../controller/deleteController')
+const userDeleteController = require('../controller/userDeleteController')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -81,5 +82,7 @@ router.post('/', upload.single('productImage'), async (req, res) => {
 })
 
 router.delete('/:id', deleteController.delete)
+router.delete('/users/:id', userDeleteController.delete)
+
 
 module.exports = router
