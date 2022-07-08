@@ -53,6 +53,140 @@
             }
         }
 
+        .main-menu {
+            position: relative;
+        }
+
+        .main-menu ul .nav .navbar-nav {
+            text-align: right;
+            float: none;
+        }
+
+        .main-menu .nav li {
+            position: relative;
+            padding: 16px 12px 0px;
+            -webkit-transition: all 0.2s linear;
+            -moz-transition: all 0.2s linear;
+            -ms-transition: all 0.2s linear;
+            -o-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+        }
+
+        .action {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+        }
+
+        .action .profile {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            margin-top: -10px;
+        }
+
+        .action .profile img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .action .menu {
+            position: absolute;
+            top: 120px;
+            right: -10px;
+            padding: 10px 20px;
+            background: rgb(241, 245, 203);
+            width: 200px;
+            box-sizing: 0 5px 20px;
+            border-radius: 15px;
+            transition: 0.5s;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .action .menu.active {
+            visibility: visible;
+            opacity: 1;
+            top: 80px;
+        }
+
+        .action .menu::before {
+            content: '';
+            position: absolute;
+            top: -5;
+            right: 28px;
+            width: 20px;
+            height: 20px;
+            background: rgb(244, 248, 190);
+            transform: rotate(45deg);
+        }
+
+        .action .menu h3 {
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: #555;
+            line-height: 1.2em;
+        }
+
+        .action .menu h3 span {
+            font-size: 14px;
+            color: #eaf1aa;
+            font-weight: 400;
+        }
+
+        .action .menu ul li {
+            list-style: none;
+            padding: 10px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .action .menu ul li .pro-btn {
+            margin-bottom: 6px;
+        }
+
+        .action .menu ul li img {
+            max-width: 20px;
+            margin-right: 10px;
+            opacity: 0.5;
+            transition: 0.5s;
+            margin-top: -5px;
+        }
+
+        .action .menu ul li:hover img {
+            opacity: 1;
+        }
+
+        .action .menu ul li .pro-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: 0.5s;
+        }
+
+        .action .menu ul li:hover .pro-btn {
+            color: #ff5d94;
+        }
+
+        .action .menu ul li .pro-btn {
+            background: none;
+            border: none;
+        }
+
     </style>
 
     <body>
@@ -89,36 +223,42 @@
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
+                        <li class="nav-item dropdown" aria-labelledby="navbarDropdown">
+                            <div class="action">
+                                <div class="profile" onclick="menuToggle();">
+                                    <img src="/carousel1.jpg">
+                                </div>
+                                <div class="nav-item dropdown menu">
+                                    <h3>
+                                        <br>Subham Mukherjee<span></span></h3>
+                                    <ul>
+                                        <li><img src="/user.png" alt=""><button class="pro-btn"
+                                                onclick="location.href = '#'">
+                                                My profile
+                                            </button></li>
+                                        <li><img src="/logout.png" alt=""><button class="pro-btn"
+                                                onclick="location.href = '/logout'">
+                                                Logout
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <img src="/cart.png" alt=""><button class="pro-btn"
+                                                onclick="location.href = '/scozy/products/add-to-cart'">
+                                                Cart
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
-                    <a href="/logout">Logout</a>
+
                 </div>
             </div>
         </nav>
 
         <div class="container">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="/carousel1.jpg" class="d-block w-100" alt="..." style="height: 530px;">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/carousel2.jpg" class="d-block w-100" style="height: 530px;" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/carousel3.jpg" class="d-block w-100" style="height: 530px;" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+            <img src="/carousel1.jpg" alt="" style="height: 500px; width: 1130px; margin-top: 20px;">
         </div>
         <br><br>
         <div class="container">
@@ -164,6 +304,11 @@
             interval: 2000,
             wrap: false
         })
+
+        function menuToggle() {
+            const toggleMenu = document.querySelector('.menu');
+            toggleMenu.classList.toggle('active')
+        }
 
     </script>
 

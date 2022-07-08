@@ -56,6 +56,9 @@ app.use('/scozy/admin/dashboard/updateProduct/', updateProductRouter)
 const updateUserRouter = require('./routes/updateUser')
 app.use('/scozy/admin/dashboard/updateUser/', updateUserRouter)
 
+const cartRouter = require('./routes/cart')
+app.use('/scozy/products/add-to-cart', cartRouter)
+
 app.get('/logout', async (req, res) => {
     const token = req.cookies.JWT
     const verifyUser = jwt.verify(token, process.env.JWT_SECRET)

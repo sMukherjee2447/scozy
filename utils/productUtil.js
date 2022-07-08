@@ -73,6 +73,15 @@ const products = [{
         productId: "E-M003",
         image: "2022-07-06T10-51-26.379Z81yL2dXKTHL._SL1500_.jpg",
         box: "Mobile",
+    },
+    {
+        name: "XPG ADATA",
+        description: "XPG ADATA GAMMIX D30 DDR4 8GB (1x8GB) 3200MHz U-DIMM Desktop Memory -AX4U320038G16A-SR30",
+        price: "₹ 2,659",
+        specs: "Do refer to the installation instruction and compatible processor support list in the image section GAMMIX D30 brings you excellent performance with speeds ranging from 2666 MHz to 4600 MHz and supports Intel X299 2666 MHz and AMD AM4 / Ryzen platforms.CAS Latency- CL16 - 18 - 18 | Interface- DDR4 U - DIMM 2666 - 4133 MHz, | RAM Size- 8 GB(8 x16GB) DDR4 The GAMMIX D30 features an edgy wing - shaped design that exudes a sense of power and stealth. | Warranty - Life time warranty",
+        productId: "E-R001",
+        image: "2022-07-06T10-51-26.379Z81yL2dXKTHL._SL1500_.jpg",
+        box: "RAM",
     }
 ]
 
