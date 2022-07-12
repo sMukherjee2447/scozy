@@ -41,9 +41,20 @@ router.post('/', async (req, res) => {
             const admin_token = admin.register_token
 
             res.cookie("JWT", admin_token, {
-                expires: new Date(Date.now() + 30000000),
+                expires: new Date(Date.now() + 300),
                 httpOnly: true
             })
+
+            const checkCookie = req.cookies.JWT
+
+            if (!checkCookie) {
+                errors.push({
+                    message: "Session Expired, please signin"
+                })
+                res.render('/admin/signin', {
+                    errors
+                })
+            }
 
             if (isMatch) {
                 res.redirect('/scozy/admin/dashboard')
