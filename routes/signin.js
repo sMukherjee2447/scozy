@@ -37,6 +37,11 @@ router.post('/', async (req, res) => {
             expires: new Date(Date.now() + 300000000000),
             httpOnly: true
         })
+
+        res.cookie("User_Cookie", user.fname, {
+            expires: new Date(Date.now() + 300000000000),
+            httpOnly: true
+        })        
         if (isMatch) {
             res.redirect('/scozy/home')
         } else {

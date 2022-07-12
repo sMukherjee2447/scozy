@@ -11,13 +11,13 @@ app.use(cookieParser())
 router.get('/', async (req, res) => {
     const allProducts = await Products.find({})
 
-    const isCookie = req.cookies.JWT
+    const isCookie = req.cookies.User_Cookie
     console.log("This is the cookie in home page ==>", isCookie)
 
-    const userData = await User.findOne({})
+    const userData = await User.findOne({"fname":isCookie})
     console.log('this is user data from home page ==>', userData);
 
-    // console.log('all products-->', allProducts);
+    // console.log('all products-->', allProducts);   
     res.render('home', {
         allProducts,
         userData
